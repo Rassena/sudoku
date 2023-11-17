@@ -1,8 +1,8 @@
 def print_board(board):
     print("+-+-+-+-+-+-+-+-+-+")
-    for row in range(8):
-        print("|", end=" |")
-        for col in range(8):
+    for row in range(len(board)):
+        print("", end="|")
+        for col in range(len(board[row])):
             if board[row][col] == 0:
                 print(" ", end="|")
             else:

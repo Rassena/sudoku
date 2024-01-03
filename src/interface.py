@@ -1,4 +1,8 @@
+"""Interface of Sudoku"""
+
+
 def print_board(board):
+    """Print current state of sudoku board"""
     print("+-+-+-+-+-+-+-+-+-+")
     for row in range(len(board)):
         print("", end="|")

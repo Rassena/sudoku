@@ -1,3 +1,6 @@
+"""main of AI for sudoku problems """
+
+
 from sudoku import Sudoku
 from interface import print_board
 
@@ -17,7 +20,6 @@ def training_board(board):
 
 
 def training_board_2(board):
-
     board[0] = [2, 0, 0, 5, 0, 7, 0, 0, 0]
     board[1] = [0, 0, 6, 2, 3, 0, 1, 0, 0]
     board[2] = [7, 5, 3, 6, 0, 0, 0, 4, 8]
@@ -33,11 +35,17 @@ def training_board_2(board):
 
 if __name__ == "__main__":
     sudoku = Sudoku()
-    training_board_2(sudoku.board)
+    training_board(sudoku.board)
     print_board(sudoku.board)
 
     while sudoku.make_trivial_move():
-        print()
-        print_board(sudoku.board)
-        print()
+        True
     print("No trivial Moves")
+    print_board(sudoku.board)
+
+    for row in range(sudoku.vertical_length):
+        for col in range(sudoku.horizontal_length):
+            print(sudoku.get_valid_numbers(row, col))
+
+    for number in range(1,10):
+            print(number, sudoku.count_posible_places(number))
